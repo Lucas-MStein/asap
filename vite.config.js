@@ -1,5 +1,16 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-  base: '/asap/' // <-- wichtig: Slash vorne und hinten
+  base: '/asap/',
+  build: {
+    rollupOptions: {
+      input: {
+        main: 'index.html',
+        initial: 'initial.html',
+        daily: 'daily.html',
+        downloads: 'downloads.html',
+        impressum: 'impressum.html',
+      },
+    },
+  },
 })
