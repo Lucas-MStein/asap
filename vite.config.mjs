@@ -1,10 +1,16 @@
 import { defineConfig } from 'vite'
+import { viteStaticCopy } from 'vite-plugin-static-copy'
 
 export default defineConfig({
-  base: '/', // wichtig bei eigener Domain – kein Subverzeichnis
-
-  build: {
-    outDir: 'dist',         // Zielordner für GitHub Pages
-    emptyOutDir: true       // optional: leert das Zielverzeichnis vor jedem Build
-  }
+  base: '/',
+  plugins: [
+    viteStaticCopy({
+      targets: [
+        { src: 'initial.html', dest: '.' },
+        { src: 'daily.html', dest: '.' },
+        { src: 'downloads.html', dest: '.' },
+        { src: 'impressum.html', dest: '.' }
+      ]
+    })
+  ]
 })
