@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Daily Commits</title>
   <link rel="stylesheet" href="/style.css" />
   <link rel="icon" href="/img/asap-logo.png" />
@@ -23,51 +23,87 @@
 <!-- Content -->
 <main class="flex-1 py-20 px-4 md:px-20">
   <div class="max-w-6xl mx-auto">
-
-    <!-- Intro -->
     <h1 class="text-4xl font-extrabold tracking-tight mb-4">Daily Commits</h1>
     <p class="text-lg leading-relaxed mb-10">
       Tägliche Fortschritte ab dem offiziellen Projektstart am <strong class="text-[#d4af37]">23. Juni 2025</strong>.
     </p>
 
-    <!-- Tabelle -->
-    <div class="overflow-x-auto bg-white shadow-lg rounded-xl">
-      <table class="min-w-full text-left border border-gray-200 text-sm md:text-base">
-        <thead class="bg-gray-100 text-gray-700 uppercase text-xs font-semibold tracking-wider">
-        <tr>
-          <th class="px-4 py-3 border-b border-gray-200">Datum</th>
-          <th class="px-4 py-3 border-b border-gray-200">Initial Commit erfüllt?</th>
-          <th class="px-4 py-3 border-b border-gray-200">Extras</th>
-          <th class="px-4 py-3 border-b border-gray-200">Anmerkungen</th>
-        </tr>
-        </thead>
-        <tbody class="text-gray-800">
-        <tr class="hover:bg-gray-50">
-          <td class="px-4 py-3 border-b border-gray-200">23. Juni 2025</td>
-          <td class="px-4 py-3 border-b border-gray-200">Ja</td>
-          <td class="px-4 py-3 border-b border-gray-200">Geburtstag von Lisa</td>
-          <td class="px-4 py-3 border-b border-gray-200">-</td>
-        </tr>
-        <tr class="hover:bg-gray-50">
-          <td class="px-4 py-3 border-b border-gray-200">24. Juni 2025</td>
-          <td class="px-4 py-3 border-b border-gray-200">Ja</td>
-          <td class="px-4 py-3 border-b border-gray-200">Website für Leo</td>
-          <td class="px-4 py-3 border-b border-gray-200">-</td>
-        </tr>
-        <tr class="hover:bg-gray-50">
-          <td class="px-4 py-3 border-b border-gray-200">25. Juni 2025</td>
-          <td class="px-4 py-3 border-b border-gray-200">Nein</td>
-          <td class="px-4 py-3 border-b border-gray-200">Twitch Stream</td>
-          <td class="px-4 py-3 border-b border-gray-200">Faul gewesen</td>
-        </tr>
-        <tr class="hover:bg-gray-50">
-          <td class="px-4 py-3 border-b border-gray-200">26. Juni 2025</td>
-          <td class="px-4 py-3 border-b border-gray-200">Nein</td>
-          <td class="px-4 py-3 border-b border-gray-200">-</td>
-          <td class="px-4 py-3 border-b border-gray-200">Extra Faul gewesen</td>
-        </tr>
-        </tbody>
-      </table>
+    <!-- Woche Buttons -->
+    <div class="flex space-x-4 mb-8">
+      <button onclick="showWeek(1)" class="px-4 py-2 border rounded-full bg-black text-white hover:bg-[#d4af37] hover:text-black transition">Woche 1</button>
+      <button onclick="showWeek(2)" class="px-4 py-2 border rounded-full bg-black text-white hover:bg-[#d4af37] hover:text-black transition">Woche 2</button>
+    </div>
+
+    <!-- Tabellen -->
+    <div id="week-1" class="week-table">
+      <div class="overflow-x-auto bg-white shadow-lg rounded-xl">
+        <table class="min-w-full text-left border border-gray-200 text-sm md:text-base">
+          <thead class="bg-gray-100 text-gray-700 uppercase text-xs font-semibold tracking-wider">
+          <tr>
+            <th class="px-4 py-3 border-b">Datum</th>
+            <th class="px-4 py-3 border-b">Initial Commit erfüllt?</th>
+            <th class="px-4 py-3 border-b">Extras</th>
+            <th class="px-4 py-3 border-b">Anmerkungen</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr class="hover:bg-gray-50">
+            <td class="px-4 py-3 border-b">23. Juni 2025</td>
+            <td class="px-4 py-3 border-b">Ja</td>
+            <td class="px-4 py-3 border-b">Geburtstag von Lisa</td>
+            <td class="px-4 py-3 border-b">-</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="px-4 py-3 border-b">24. Juni 2025</td>
+            <td class="px-4 py-3 border-b">Ja</td>
+            <td class="px-4 py-3 border-b">Website für Leo</td>
+            <td class="px-4 py-3 border-b">-</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="px-4 py-3 border-b">25. Juni 2025</td>
+            <td class="px-4 py-3 border-b">Nein</td>
+            <td class="px-4 py-3 border-b">Twitch Stream</td>
+            <td class="px-4 py-3 border-b">Faul gewesen</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="px-4 py-3 border-b">26. Juni 2025</td>
+            <td class="px-4 py-3 border-b">Nein</td>
+            <td class="px-4 py-3 border-b">-</td>
+            <td class="px-4 py-3 border-b">Extra faul gewesen</td>
+          </tr>
+          <tr class="hover:bg-gray-50">
+            <td class="px-4 py-3 border-b">27. Juni 2025</td>
+            <td class="px-4 py-3 border-b">Nein</td>
+            <td class="px-4 py-3 border-b">Basketball, Stadtfest</td>
+            <td class="px-4 py-3 border-b">Cooler Tag</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div id="week-2" class="week-table hidden">
+      <div class="overflow-x-auto bg-white shadow-lg rounded-xl">
+        <table class="min-w-full text-left border border-gray-200 text-sm md:text-base">
+          <thead class="bg-gray-100 text-gray-700 uppercase text-xs font-semibold tracking-wider">
+          <tr>
+            <th class="px-4 py-3 border-b">Datum</th>
+            <th class="px-4 py-3 border-b">Initial Commit erfüllt?</th>
+            <th class="px-4 py-3 border-b">Extras</th>
+            <th class="px-4 py-3 border-b">Anmerkungen</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr class="hover:bg-gray-50">
+            <td class="px-4 py-3 border-b">30. Juni 2025</td>
+            <td class="px-4 py-3 border-b">-</td>
+            <td class="px-4 py-3 border-b">-</td>
+            <td class="px-4 py-3 border-b">-</td>
+          </tr>
+          <!-- Weitere Einträge für die zweite Woche -->
+          </tbody>
+        </table>
+      </div>
     </div>
 
     <!-- Hinweis -->
@@ -83,6 +119,14 @@
     <span class="block md:inline">&copy; 2025 Lucas-Maurice Stein</span>
   </div>
 </footer>
+
+<!-- JS für Slider -->
+<script>
+  function showWeek(week) {
+    document.querySelectorAll('.week-table').forEach(table => table.classList.add('hidden'));
+    document.getElementById(`week-${week}`).classList.remove('hidden');
+  }
+</script>
 
 </body>
 </html>
